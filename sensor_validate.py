@@ -1,5 +1,5 @@
 
-def  _give_me_a_good_name(value, nextValue, maxDelta):
+def  Setting_up_thresholds(value, nextValue, maxDelta):
   if nextValue - value > maxDelta:
     return False
   return True
