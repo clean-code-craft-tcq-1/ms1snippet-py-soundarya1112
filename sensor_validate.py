@@ -11,5 +11,5 @@ def validate_soc_reading(values):
       return False
     elif(not _give_me_a_good_name(values[i], values[i + 1], 0.1)):
       return False
-    else
+    else:
       return True
