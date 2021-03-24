@@ -1,7 +1,7 @@
 Sensor_limits = { 'soc' : 0.05 , 'curr' : 0.1 }
 
-def  Setting_up_thresholds(value, nextValue, maxDelta):
-  if nextValue - value > maxDelta:
+def  Setting_up_thresholds(value, nextValue, Sensor_limits):
+  if nextValue - value > Sensor_limits:
     return False
   return True
 
