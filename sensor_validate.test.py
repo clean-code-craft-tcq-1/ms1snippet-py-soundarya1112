@@ -12,7 +12,7 @@ class SensorValidatorTest(unittest.TestCase):
       sensor_validate. validate_soc_reading([0.03, 0.03, 0.03, 0.33],'curr')
     )
   def test_reports_error_when_current_jumps(self):
-    self.assertTrue(sensor_validate.validate_soc_reading([],'curr')== None)
+    self.assertFalse(sensor_validate.validate_soc_reading([],'curr')== None)
 
 if __name__ == "__main__":
   unittest.main()
