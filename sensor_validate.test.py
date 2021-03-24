@@ -7,7 +7,7 @@ class SensorValidatorTest(unittest.TestCase):
       sensor_validate.validate_soc_reading([0.0, 0.01, 0.5, 0.51],'soc')
     )
     self.assertTrue(
-      sensor_validate.validate_soc_reading([0.0, 0.01, None, 0.51],'soc')
+      sensor_validate.validate_soc_reading([0.0, 0.01,0.02, None, 0.51],'soc')
     )
   
   def test_reports_error_when_current_jumps(self):
@@ -15,7 +15,7 @@ class SensorValidatorTest(unittest.TestCase):
       sensor_validate. validate_soc_reading([0.03, 0.03, 0.03, 0.33],'curr')
     )
     self.assertTrue(
-      sensor_validate.validate_soc_reading([0.03, 0.03, None, 0.33],'curr')
+      sensor_validate.validate_soc_reading([0.03, 0.03, 0.05,None, 0.33],'curr')
     )
 
 if __name__ == "__main__":
