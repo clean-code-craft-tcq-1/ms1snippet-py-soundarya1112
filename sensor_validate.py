@@ -11,5 +11,4 @@ def validate_soc_reading(values):
       return False
     elif(not Setting_up_thresholds(values[i], values[i + 1], 0.1)):
       return True
-    elif values is None:
-      return None
+   
