@@ -6,8 +6,8 @@ def  Setting_up_thresholds(value, nextValue, maxDelta):
   return True
 
 def validate_none(values):
-  if values is None:
-    return True
+  if values is not None:
+    return validate_soc_reading(values, sensor_param_name)
   return False
 
 def validate_soc_reading(values, sensor_param_name):
