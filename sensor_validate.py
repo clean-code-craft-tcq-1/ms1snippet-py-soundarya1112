@@ -1,19 +1,21 @@
+sensor_limits = { 'soc' : 0.05 , 'curr' : 0.1 }
 
-def  _give_me_a_good_name(value, nextValue, maxDelta):
+def  Setting_up_thresholds(value, nextValue, maxDelta):
   if nextValue - value > maxDelta:
     return False
   return True
 
-def validate_soc_reading(values):
-  last_but_one_reading = len(values) - 1
-  for i in range(last_but_one_reading):
-    if(not _give_me_a_good_name(values[i], values[i + 1], 0.05)):
-      return False
-  return True
+def validate_none(values,maxDelta):
+  if values is not None:
+    return validate_reading(values, sensor_param_name)
+  return False
 
-def validate_current_reading(values):
+def validate_reading(values, sensor_param_name):
   last_but_one_reading = len(values) - 1
   for i in range(last_but_one_reading):
-    if(not _give_me_a_good_name(values[i], values[i + 1], 0.1)):
-      return False
+      if(not Setting_up_thresholds(values[i], values[i + 1],sensor_limits[sensor_param_name])):
+          return False
   return True
+     
+
+
